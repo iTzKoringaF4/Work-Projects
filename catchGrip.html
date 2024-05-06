@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturar por Aderencia</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --text-title: #4285F4;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-content{
+    width: 700px;
+    height: 400px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 5px;
+    padding-top: 0px;
+}
+h3{
+    color:  var(--text-title);
+}
+.collum-course{
+    width: 100%;
+    height: 95%;
+    overflow: scroll;
+}
+/* CSS button */
+.button-17 {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform,opacity;
+    z-index: 0;
+  }
+  
+  .button-17:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+  }
+  
+  .button-17:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+  }
+  
+  .button-17:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+  }
+  
+  .button-17:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+  
+  .button-17:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+  }
+  
+  .button-17:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+  
+  .button-17:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+  }
+  
+  .button-17:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+  }
+</style>
+<body>
+  <br><h3>Selecione os cursos para consultar os nomes com aderência inferior a 80%</h3>
+    <div class="container">
+        <div class="box-content">
+            <div class="content">
+                <h3>Multiplicadores</h3>
+                <hr>
+                <div class="collum-course">
+                    <form id="dataFormGrip" onsubmit="event.preventDefault(); enviarAderencia()">
+                        <b><p class="month-title">JANEIRO</p></b>
+                        <p>*Não há cursos*</p><br>
+                        <hr><br>
+                        <b><p class="month-title">FEVEREIRO</p></b>
+                        <input type="checkbox" id="option1" name="option1" value="15">
+                        <label for="option1">19/02/2024	- Introdução ao Programa: 5s no setor em todas operações Loggi	</label><br>
+                        <input type="checkbox" id="option2" name="option2" value="17">
+                        <label for="option2">26/02/2024 - Inclusão de pacotes na esteira em XDs Automatizados</label><br><br>
+                        <hr><br>
+                        <b><p class="month-title">MARÇO</p></b>
+                        <input type="checkbox" id="option3" name="option3" value="19">
+                        <label for="option3">04/03/2024 - Devolução de Insumos em todas as operações Loggi</label><br>
+                        <input type="checkbox" id="option4" name="option4" value="21">
+                        <label for="option4">11/03/2024 - Boas práticas de Manuseio em todas operações Loggi</label><br>
+                        <input type="checkbox" id="option5" name="option5" value="23">
+                        <label for="option5">25/03/2024 - Como movimentar pacotes e sacas de forma correta, em todas operações Loggi</label><br><br>
+                        <hr><br>
+                        <b><p class="month-title">ABRIL</p></b>
+                        <input type="checkbox" id="option6" name="option6" value="25">
+                        <label for="option6">01/04/2024 - Validação de Entregadores em Agências e HUB's</label><br>
+                        <input type="checkbox" id="option7" name="option7" value="27">
+                        <label for="option7">08/04/2024 - Conferência de pacotes em Postos Avançados</label><br>
+                        <input type="checkbox" id="option8" name="option8" value="29">
+                        <label for="option8">15/04/2024 - Recebimento em todos os XDs - Parte I</label><br>
+                        <input type="checkbox" id="option9" name="option9" value="31">
+                        <label for="option9">22/04/2024 - Loggi Fácil	</label><br><br>
+                    </form> 
+                </div>
+            </div>
+        </div>
+        <input class="button-17" type="button" value="Gerar Planilha" onclick="enviarAderencia()">
+    </div>
+    <script>
+        function enviarAderencia() {
+          var checkboxes = document.querySelectorAll('#dataFormGrip input[type="checkbox"]:checked');
+          var collumNumberGrip = [];
+          
+          checkboxes.forEach(function(checkbox) {
+            collumNumberGrip.push(checkbox.value);
+          });
+
+          // Unindo os elementos do array em uma string separada por vírgula 
+          //A diferença dos nomes das variaveis se dão a partir do "s" não consegui pensar em nada melhor
+          var collumNumbersGrip = (collumNumberGrip.join(','));
+
+        //Log para verificar as colunas selecionadas e como está sendo passado para o código
+          console.log("Multiplicadores: " + collumNumbersGrip);
+          google.script.run.capturarPorTaxaDeAderencia(collumNumbersGrip);
+      }
+    </script>
+</body>
+</html>
