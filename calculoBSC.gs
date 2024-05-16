@@ -1,7 +1,7 @@
 function calculoDeBSC(collumNumbersString, optionsString) {
-  var collumNumberBscArray = collumNumbersString;
-  var selectedOptions = optionsString;
-  var monthName = "Presença para Líderes e Multiplicadores"
+    var collumNumberBscArray = collumNumbersString; // Convertendo string para array de números
+    var selectedOptions = optionsString; // Convertendo string para array de números
+    var monthName = "Presença para Líderes e Multiplicadores";
     
     var sheet = SpreadsheetApp.getActiveSpreadsheet();
     
@@ -18,7 +18,7 @@ function calculoDeBSC(collumNumbersString, optionsString) {
     for (var i = 0; i < values1.length; i++) {
         var base = values1[i][0]; // Base na coluna H (índice 0)
         
-        if (values1[i][40] !== "Sim") {
+        if (values1[i][40] !== "Sim") { // Coluna "AV" é o índice 40
             // Inicializar contadores para a base atual
             var totalCount = 0;
             var onesCounter = 0;
@@ -47,8 +47,8 @@ function calculoDeBSC(collumNumbersString, optionsString) {
     }
 
     // Busca dados da segunda planilha
-    var tabSheet2 = sheet.getSheetByName('Import Range Gestores');
-    var range2 = tabSheet2.getRange('C3:I' + tabSheet2.getLastRow());
+    var tabSheet2 = sheet.getSheetByName('LIDERA OPS');
+    var range2 = tabSheet2.getRange('E2:K' + tabSheet2.getLastRow());
     var values2 = range2.getValues();
 
     // Objeto para armazenar bases e contadores de ocorrências de 1s
@@ -57,7 +57,7 @@ function calculoDeBSC(collumNumbersString, optionsString) {
 
     // Iterar sobre as linhas na segunda planilha
     for (var k = 0; k < values2.length; k++) {
-        var liderBase = values2[k][0];
+        var liderBase = values2[k][0]; // Base na coluna E (índice 0)
         var liderTotalCount = 0;
         var liderOnesCounter = 0;
 
@@ -93,14 +93,6 @@ function calculoDeBSC(collumNumbersString, optionsString) {
     for (var base in totalMultiplica) {
         filteredData.push([base, totalMultiplica[base], liderMultiplica[base] || 0, onesCount[base], liderOnesCount[base] || 0]);
     }
-
-    // Adicionar dados da segunda planilha
-    for (var liderBase in liderMultiplica) {
-        if (!totalMultiplica[liderBase]) { // Verificar se a base de líder já foi adicionada
-            filteredData.push([liderBase, totalMultiplica[liderBase] || 0, liderMultiplica[liderBase], onesCount[liderBase] || 0, liderOnesCount[liderBase]]);
-        }
-    }
-
 
     // Crie a aba 'BSC' ou limpe seu conteúdo se já existir
     var newSheet = sheet.getSheetByName('Aderência aos Treinamentos');
@@ -151,7 +143,7 @@ function calculoDeBSC(collumNumbersString, optionsString) {
         .setVerticalAlignment("middle");
 
     var cellFunction = newSheet.getRange('F4:F' + filteredData.length);
-    cellFunction.setFormula('=(D4+E4)/(B4+C4)*100%')
+    cellFunction.setFormula('=IFERROR((D4+E4)/(B4+C4)*100%;"Falta dados")')
         .setHorizontalAlignment("center")
         .setVerticalAlignment("middle");
 
