@@ -160,22 +160,16 @@
                 <div class="collum-content-lider">
                     <div class="menu-list-lider"> 
                         <form id="dataFormDate" onsubmit="event.preventDefault();">
-                            <b><p class="month-title">JANEIRO</p></b>
-                            <input type="checkbox" id="option1" name="option1" value="1">
-                            <label for="option1">16/01/2024 - Devolução para Embarcadores</label><br>
-                            <input type="checkbox" id="option2" name="option2" value="2">
-                            <label for="option2">24/01/2024 - Radar - Novo Tracking de Pacotes</label><br>
-                            <input type="checkbox" id="option3" name="option3" value="3">
-                            <label for="option3">31/01/2024 - Fiel Depositário - Receita Federal</label><br><br>
-                            <hr><br>
-                            <b><p class="month-title">FEVEREIRO</p></b>
-                            <input type="checkbox" id="option4" name="option4" value="4">
-                            <label for="option4">03/02/2024 - Loggi Ponto - Agências</label><br>
-                            <input type="checkbox" id="option5" name="option5" value="5">
-                            <label for="option5">19/02/2024 - Fluxo de abertura de chamados no Jira</label><br>
-                            <input type="checkbox" id="option6" name="option6" value="6">
-                            <label for="option6">20/02/2024 - Gestão de Ativos</label><br><br>
-                        </form>            
+                          <b><p class="month-title">ABRIL</p></b>
+                          <input type="checkbox" id="option22" name="option22" value="1">
+                          <label for="option22">01/04/2024 - Novo Lex</label><br>
+                          <input type="checkbox" id="option23" name="option23" value="3">
+                          <label for="option23">15/04/2024 - Produtividade</label><br><br>
+                          <hr>
+                          <b><p class="month-title">MAIO</p></b>
+                          <input type="checkbox" id="option24" name="option24" value="5">
+                          <label for="option24">07/05/2024 - Radar Novo Produto</label><br>
+                        </form>             
                     </div>
                 </div>
                 <div class="collum-content-multiplica">
@@ -220,8 +214,8 @@
                         <label for="option20">27/05/2024 - Amarração de carga no veículo 2.0</label><br>
                         <hr><br>
                         <b><p class="month-title">JUNHO</p></b>
-                        <input type="checkbox" id="option20" name="option21" value="37">
-                        <label for="option20">03/06/2024 - Recuperação de pacotes</label><br>
+                        <input type="checkbox" id="option21" name="option21" value="37">
+                        <label for="option21">03/06/2024 - Recuperação de pacotes</label><br>
                     </form> 
                 </div>
             </div>
@@ -232,6 +226,7 @@
         function enviarDatas() {
           var checkboxes2 = document.querySelectorAll('#dataFormDate2 input[type="checkbox"]:checked');
           var checkboxes1 = document.querySelectorAll('#dataFormDate input[type="checkbox"]:checked');
+
           var collumNumberBsc = [];
           var selectedOptions = [];
           
@@ -252,6 +247,7 @@
 
           console.log("Multiplicadores: " + collumNumbersString);
           console.log("Lideres: " + optionsString);
+
           google.script.run.calculoDeBSC(collumNumbersString, optionsString);
       }
     </script>
