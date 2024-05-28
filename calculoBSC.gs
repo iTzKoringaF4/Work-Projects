@@ -6,7 +6,7 @@ function calculoDeBSC(collumNumbersString, optionsString) {
     var sheet = SpreadsheetApp.getActiveSpreadsheet();
     
     // Busca dados da primeira planilha
-    var tabSheet1 = sheet.getSheetByName('Cópia de Matriz 1');
+    var tabSheet1 = sheet.getSheetByName('Matriz 20/05');
     var range1 = tabSheet1.getRange('H6:AV' + tabSheet1.getLastRow());
     var values1 = range1.getValues();
     
