@@ -16,7 +16,7 @@ function showGrip() {
 
 function showBsc() {
   var html = 
-    HtmlService.createHtmlOutputFromFile('bsc')
+    HtmlService.createHtmlOutputFromFile('dashBSC')
     .setWidth(1100) // Defina a largura da janela para 800 pixels
     .setHeight(600); // Defina a altura da janela para 600 pixels
   SpreadsheetApp.getUi().showModalDialog(html, 'Dados | BSC');  
