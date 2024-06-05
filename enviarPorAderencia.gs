@@ -7,8 +7,8 @@ function capturarPorTaxaDeAderencia(collumNumbersGripString) {
   var monthName = "MAIO";
 
     var sheet = SpreadsheetApp.getActiveSpreadsheet();
-    var tabSheet = sheet.getSheetByName('Matriz 20/05');
-    var range = tabSheet.getRange('A1:BM' + tabSheet.getLastRow());
+    var tabSheet = sheet.getSheetByName('Matriz 27/05');
+    var range = tabSheet.getRange('A1:BT' + tabSheet.getLastRow());
     var values = range.getValues();
     var filteredData = [];
     
@@ -20,7 +20,7 @@ function capturarPorTaxaDeAderencia(collumNumbersGripString) {
     filteredData.push(headerRow);
 
     for (var i = 0; i < values.length; i++) {
-        var rowData = [values[i][0], values[i][5], values[i][64], values[i][7]];
+        var rowData = [values[i][0], values[i][5], values[i][71], values[i][7]];
         var aderenciaEncontrada = false; // Flag para indicar se a aderência foi encontrada para a linha atual
         for (var j = 0; j < collumNumbersArray.length; j++) {
             var value = values[i][collumNumbersArray[j]];
